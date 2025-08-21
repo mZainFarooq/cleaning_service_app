@@ -58,6 +58,23 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/fonts/
+    - assets/images/
+
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/montserrat/Montserrat-Regular.ttf
+        - asset: assets/fonts/montserrat/Montserrat-Bold.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/roboto/Roboto-Regular.ttf
+        - asset: assets/fonts/roboto/Roboto-Medium.ttf
+    - family: CourierPrime
+      fonts:
+        - asset: assets/fonts/courierPrime/CourierPrime-Regular.ttf
+        - asset: assets/fonts/courierPrime/CourierPrime-Bold.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:
