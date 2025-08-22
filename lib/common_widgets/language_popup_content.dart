@@ -71,14 +71,11 @@ class _LanguagePopupWidgetState extends State<LanguagePopupWidget> {
                   ),
                   child: Row(
                     children: [
-                      CustomText(
-                        text: lang['flag']!,
-                        size: CustomTextSize.base,
-                      ),
+                      CustomText(text: lang['flag']!, size: CustomTextSize.sm),
                       const SizedBox(width: 12),
                       CustomText(
                         text: lang['name']!,
-                        size: CustomTextSize.base,
+                        size: CustomTextSize.sm,
                         color:
                             isSelected
                                 ? CustomTextColor.alwaysWhite

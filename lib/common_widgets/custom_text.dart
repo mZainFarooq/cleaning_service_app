@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:frontend_app/core/constants/app_fonts_sizes.dart';
 import '../../core/constants/app_colors.dart';
 
-enum CustomTextSize { x2l, xl, lg, md, base, sm, xs }
+enum CustomTextSize { xxl, xl, lg, md, sm, xs, xxs }
 
 enum CustomTextColor {
   primary,
@@ -31,7 +32,7 @@ class CustomText extends StatelessWidget {
   const CustomText({
     super.key,
     required this.text,
-    this.size = CustomTextSize.base,
+    this.size = CustomTextSize.sm,
     this.color = CustomTextColor.text,
     this.fontWeight = FontWeight.normal,
     this.textAlign,
@@ -46,20 +47,20 @@ class CustomText extends StatelessWidget {
 
   Map<String, dynamic> _getTextStyleDefaults() {
     switch (size) {
-      case CustomTextSize.x2l:
-        return {"size": 28.0.sp, "spacing": 0.5.sp, "height": 1.3};
+      case CustomTextSize.xxl:
+        return {"size": AppFonts.xxl, "spacing": 0.5.sp, "height": 1.3};
       case CustomTextSize.xl:
-        return {"size": 22.0.sp, "spacing": 0.4.sp, "height": 1.3};
+        return {"size": AppFonts.xl, "spacing": 0.4.sp, "height": 1.3};
       case CustomTextSize.lg:
-        return {"size": 18.0.sp, "spacing": 0.3.sp, "height": 1.3};
+        return {"size": AppFonts.lg, "spacing": 0.3.sp, "height": 1.3};
       case CustomTextSize.md:
-        return {"size": 16.0.sp, "spacing": 0.2.sp, "height": 1.4};
-      case CustomTextSize.base:
-        return {"size": 14.0.sp, "spacing": 0.1.sp, "height": 1.4};
+        return {"size": AppFonts.md, "spacing": 0.2.sp, "height": 1.4};
       case CustomTextSize.sm:
-        return {"size": 12.0.sp, "spacing": 0.0.sp, "height": 1.4};
+        return {"size": AppFonts.sm, "spacing": 0.1.sp, "height": 1.4};
       case CustomTextSize.xs:
-        return {"size": 10.0.sp, "spacing": 0.0.sp, "height": 1.4};
+        return {"size": AppFonts.xs, "spacing": 0.0.sp, "height": 1.4};
+      case CustomTextSize.xxs:
+        return {"size": AppFonts.xxs, "spacing": 0.0.sp, "height": 1.4};
     }
   }
 

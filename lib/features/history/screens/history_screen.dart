@@ -19,7 +19,7 @@ class HistoryScreen extends StatelessWidget {
         children: [
           CustomText(
             text: "Cleaning History",
-            size: CustomTextSize.x2l,
+            size: CustomTextSize.xxl,
             fontWeight: FontWeight.w600,
             color: CustomTextColor.text,
           ),

@@ -7,6 +7,8 @@ import 'package:frontend_app/common_widgets/custom_text_field.dart';
 import 'package:frontend_app/core/constants/app_assets.dart';
 import 'package:frontend_app/core/constants/app_colors.dart';
 import 'package:frontend_app/core/constants/app_spacing.dart';
+import 'package:frontend_app/core/utils/custom_navigator.dart';
+import 'package:frontend_app/features/dashboard/screens/dashboard_screen.dart';
 import 'package:frontend_app/layout/auth/auth_layout.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -54,9 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
         if (!mounted) return;
         setState(() => isLoading = false);
 
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(const SnackBar(content: Text("Login Successful ✅")));
+        CustomNavigator.replace(context, const DashboardScreen());
       });
     }
   }
@@ -73,7 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
             // Heading
             const CustomText(
               text: "Welcome Back 👋",
-              size: CustomTextSize.x2l,
+              size: CustomTextSize.xxl,
               fontWeight: FontWeight.bold,
               textAlign: TextAlign.center,
             ),
@@ -81,7 +81,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
             const CustomText(
               text: "Hello there, sign in to continue",
-              size: CustomTextSize.base,
+              size: CustomTextSize.sm,
               color: CustomTextColor.textSecondary,
               textAlign: TextAlign.center,
             ),
@@ -140,7 +140,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               const CustomText(
                                 text:
                                     "Choose how you want to reset your password. You can do it yourself or ask an admin to help.",
-                                size: CustomTextSize.base,
+                                size: CustomTextSize.sm,
                                 color: CustomTextColor.textSecondary,
                               ),
                             ],
@@ -204,7 +204,7 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 const CustomText(
                   text: "Don’t have an account? ",
-                  size: CustomTextSize.base,
+                  size: CustomTextSize.sm,
                 ),
                 GestureDetector(
                   onTap: () {
@@ -214,7 +214,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                   child: const CustomText(
                     text: "Sign Up",
-                    size: CustomTextSize.base,
+                    size: CustomTextSize.sm,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

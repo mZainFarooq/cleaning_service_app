@@ -64,18 +64,26 @@ flutter:
     - assets/images/
 
   fonts:
-    - family: Montserrat
-      fonts:
-        - asset: assets/fonts/montserrat/Montserrat-Regular.ttf
-        - asset: assets/fonts/montserrat/Montserrat-Bold.ttf
     - family: Roboto
       fonts:
         - asset: assets/fonts/roboto/Roboto-Regular.ttf
-        - asset: assets/fonts/roboto/Roboto-Medium.ttf
-    - family: CourierPrime
+        - asset: assets/fonts/roboto/Roboto-Bold.ttf
+          weight: 700
+
+    - family: Poppins
       fonts:
-        - asset: assets/fonts/courierPrime/CourierPrime-Regular.ttf
-        - asset: assets/fonts/courierPrime/CourierPrime-Bold.ttf
+        - asset: assets/fonts/poppins/Poppins-Regular.ttf
+        - asset: assets/fonts/poppins/Poppins-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/poppins/Poppins-Bold.ttf
+          weight: 700
+
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/nunito/Nunito-Regular.ttf
+        - asset: assets/fonts/nunito/Nunito-Italic.ttf
+        - asset: assets/fonts/nunito/Nunito-Bold.ttf
+          weight: 700
 
   # To add assets to your application, add an assets section, like this:
   # assets:

@@ -54,7 +54,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ],
                 selectedLanguage: 'English',
                 onSelected: (lang) {
-                  print('Selected Language: $lang');
+                  // print('Selected Language: $lang');
                 },
               ),
             );

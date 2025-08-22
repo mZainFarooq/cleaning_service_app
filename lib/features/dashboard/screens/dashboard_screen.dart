@@ -8,8 +8,7 @@ import 'package:frontend_app/layout/main/main_layout.dart';
 import 'package:intl/intl.dart';
 
 class DashboardScreen extends StatefulWidget {
-  final String employeeName;
-  const DashboardScreen({super.key, required this.employeeName});
+  const DashboardScreen({super.key});
 
   @override
   State<DashboardScreen> createState() => _DashboardScreenState();
@@ -46,15 +45,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomText(
-            text: "Hello, ${widget.employeeName} 👋",
-            size: CustomTextSize.x2l,
+            text: "Hello, Zain 👋",
+            size: CustomTextSize.xxl,
+            fontFamily: "Poppins",
             fontWeight: FontWeight.w600,
-            color: CustomTextColor.text,
+            textAlign: TextAlign.center,
           ),
           AppSpacing.vxs,
           CustomText(
             text: getFormattedDate(),
-            size: CustomTextSize.base,
+            size: CustomTextSize.sm,
             color: CustomTextColor.textSecondary,
           ),
           AppSpacing.vlg,
@@ -63,7 +63,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
             children: [
               CustomText(
                 text: "Assigned Hotels",
-                size: CustomTextSize.xl,
+                size: CustomTextSize.lg,
+                fontFamily: "Poppins",
                 color: CustomTextColor.text,
               ),
               CustomButton(
@@ -98,6 +99,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       itemBuilder: (context, index) {
                         final hotel = hotels[index];
                         return Card(
+                          color:
+                              isDark
+                                  ? AppColors.darkSurface
+                                  : AppColors.lightSurface,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),

@@ -8,8 +8,7 @@ import '../routes/app_routes_names.dart';
 class AppRouter {
   static Map<String, WidgetBuilder> routes = {
     AppRouteNames.login: (context) => LoginScreen(),
-    AppRouteNames.dashboard:
-        (context) => const DashboardScreen(employeeName: "Zain"),
+    AppRouteNames.dashboard: (context) => const DashboardScreen(),
     AppRouteNames.history: (context) => const HistoryScreen(),
     AppRouteNames.settings: (context) => const SettingsScreen(),
     // AppRouteNames.hotels: (context) => const HotelsScreen(),

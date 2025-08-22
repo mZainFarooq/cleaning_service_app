@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend_app/core/constants/app_colors.dart';
 import 'package:frontend_app/core/routes/app_routes_names.dart';
 import '../../common_widgets/custom_app_bar.dart';
 
@@ -56,6 +57,11 @@ class _MainLayoutState extends State<MainLayout> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final selectedColor =
+        isDark ? AppColors.darkPrimary : AppColors.lightPrimary;
+    final unSelectedColor =
+        isDark ? AppColors.darkTextSecondary : AppColors.lightTextSecondary;
     return Scaffold(
       appBar: CustomAppBar(
         title: widget.title,
@@ -65,6 +71,8 @@ class _MainLayoutState extends State<MainLayout> {
       bottomNavigationBar:
           widget.showBottomNav
               ? BottomNavigationBar(
+                selectedItemColor: selectedColor,
+                unselectedItemColor: unSelectedColor,
                 currentIndex: _currentIndex,
                 onTap: _onTabChanged,
                 type: BottomNavigationBarType.fixed,
