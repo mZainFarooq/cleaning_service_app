@@ -51,7 +51,9 @@ class _LoginScreenState extends State<LoginScreen> {
       setState(() => isLoading = true);
 
       Future.delayed(const Duration(seconds: 2), () {
+        if (!mounted) return;
         setState(() => isLoading = false);
+
         ScaffoldMessenger.of(
           context,
         ).showSnackBar(const SnackBar(content: Text("Login Successful ✅")));
@@ -65,21 +67,23 @@ class _LoginScreenState extends State<LoginScreen> {
     return AuthLayout(
       title: "Login",
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(AppSpacing.sm),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomText(
-              "Welcome Back 👋",
-              variant: TextVariant.heading,
+            // Heading
+            const CustomText(
+              text: "Welcome Back 👋",
+              size: CustomTextSize.x2l,
+              fontWeight: FontWeight.bold,
               textAlign: TextAlign.center,
             ),
             AppSpacing.vxs,
-            CustomText(
-              "Hello there, sign in to continue",
-              variant: TextVariant.body,
+
+            const CustomText(
+              text: "Hello there, sign in to continue",
+              size: CustomTextSize.base,
+              color: CustomTextColor.textSecondary,
               textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.grey, fontSize: 14.sp),
             ),
 
             AppSpacing.vlg,
@@ -125,22 +129,19 @@ class _LoginScreenState extends State<LoginScreen> {
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              CustomText(
-                                "Select Password Reset Method",
-                                variant: TextVariant.body,
-                                textAlign: TextAlign.left,
-                                style: TextStyle(fontSize: 18.sp),
+                              const CustomText(
+                                text: "Select Password Reset Method",
+                                size: CustomTextSize.md,
+                                fontWeight: FontWeight.bold,
                               ),
                               AppSpacing.vxs,
-                              CustomText(
-                                "Choose how you want to reset your password. You can do it yourself or ask an admin to help.",
-                                variant: TextVariant.body,
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 14.sp,
-                                ),
+                              const CustomText(
+                                text:
+                                    "Choose how you want to reset your password. You can do it yourself or ask an admin to help.",
+                                size: CustomTextSize.base,
+                                color: CustomTextColor.textSecondary,
                               ),
                             ],
                           ),
@@ -168,10 +169,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   );
                 },
-                child: CustomText(
-                  "Forgot your password ?",
-                  variant: TextVariant.body,
-                  style: TextStyle(color: Colors.grey, fontSize: 14),
+                child: const CustomText(
+                  text: "Forgot your password ?",
+                  size: CustomTextSize.sm,
+                  color: CustomTextColor.textSecondary,
                 ),
               ),
             ),
@@ -201,9 +202,9 @@ class _LoginScreenState extends State<LoginScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CustomText(
-                  "Don’t have an account? ",
-                  variant: TextVariant.body,
+                const CustomText(
+                  text: "Don’t have an account? ",
+                  size: CustomTextSize.base,
                 ),
                 GestureDetector(
                   onTap: () {
@@ -211,10 +212,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       const SnackBar(content: Text("Navigate to Sign Up")),
                     );
                   },
-                  child: CustomText(
-                    "Sign Up",
-                    variant: TextVariant.body,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  child: const CustomText(
+                    text: "Sign Up",
+                    size: CustomTextSize.base,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ],

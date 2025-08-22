@@ -56,7 +56,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         ),
         if (widget.errorText != null && widget.errorText!.isNotEmpty) ...[
           const SizedBox(height: 4),
-          CustomText(widget.errorText!, variant: TextVariant.error),
+          CustomText(text: widget.errorText!, size: CustomTextSize.xs),
         ],
       ],
     );

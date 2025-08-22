@@ -32,7 +32,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 onPressed: () => Navigator.of(context).pop(),
               )
               : null,
-      title: CustomText(title, variant: TextVariant.heading),
+      title: CustomText(
+        text: title,
+        size: CustomTextSize.xl,
+        fontWeight: FontWeight.w600,
+      ),
       centerTitle: true,
       actions: [
         GestureDetector(

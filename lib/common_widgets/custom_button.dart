@@ -41,8 +41,8 @@ class CustomButton extends StatelessWidget {
             ),
           ),
           child: CustomText(
-            label,
-            variant: TextVariant.body,
+            text: label,
+            size: CustomTextSize.md,
             style: textStyle?.copyWith(color: textStyle?.color ?? Colors.white),
           ),
         );
@@ -59,8 +59,8 @@ class CustomButton extends StatelessWidget {
             ),
           ),
           child: CustomText(
-            label,
-            variant: TextVariant.body,
+            text: label,
+            size: CustomTextSize.md,
             style: textStyle?.copyWith(color: textStyle?.color ?? primaryColor),
           ),
         );
@@ -73,8 +73,8 @@ class CustomButton extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           ),
           child: CustomText(
-            label,
-            variant: TextVariant.body,
+            text: label,
+            size: CustomTextSize.md,
             style: textStyle?.copyWith(color: textStyle?.color ?? textColor),
           ),
         );

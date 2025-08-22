@@ -36,21 +36,24 @@ class _LanguagePopupWidgetState extends State<LanguagePopupWidget> {
         isDark ? AppColors.darkPrimary : AppColors.lightPrimary;
     final notSelectedColor =
         isDark ? AppColors.darkBackground : AppColors.lightBackground;
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         Padding(
           padding: const EdgeInsets.all(AppSpacing.md),
           child: CustomText(
-            'Select Language',
-            variant: TextVariant.heading,
+            text: 'Select Language',
+            size: CustomTextSize.lg,
+            fontWeight: FontWeight.w600,
+            color: CustomTextColor.primary,
             textAlign: TextAlign.left,
           ),
         ),
         SizedBox(
           height: 250,
           child: ListView.builder(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             itemCount: widget.languages.length,
             itemBuilder: (context, index) {
               final lang = widget.languages[index];
@@ -68,19 +71,24 @@ class _LanguagePopupWidgetState extends State<LanguagePopupWidget> {
                   ),
                   child: Row(
                     children: [
-                      CustomText(lang['flag']!, variant: TextVariant.body),
+                      CustomText(
+                        text: lang['flag']!,
+                        size: CustomTextSize.base,
+                      ),
                       const SizedBox(width: 12),
                       CustomText(
-                        lang['name']!,
-                        variant: TextVariant.body,
-                        style: TextStyle(
-                          color: isSelected ? Colors.white : null,
-                        ),
+                        text: lang['name']!,
+                        size: CustomTextSize.base,
+                        color:
+                            isSelected
+                                ? CustomTextColor.alwaysWhite
+                                : CustomTextColor.text,
+                        fontWeight:
+                            isSelected ? FontWeight.w600 : FontWeight.normal,
                       ),
-
                       if (isSelected) const Spacer(),
                       if (isSelected)
-                        Icon(Icons.check, color: AppColors.lightBackground),
+                        const Icon(Icons.check, color: Colors.white),
                     ],
                   ),
                 ),
@@ -106,7 +114,6 @@ class _LanguagePopupWidgetState extends State<LanguagePopupWidget> {
                   label: "Select",
                   variant: ButtonVariant.primary,
                   textStyle: const TextStyle(color: Colors.white),
-
                   onPressed: () {
                     widget.onSelected(currentSelected);
                     Navigator.pop(context);
