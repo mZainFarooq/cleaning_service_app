@@ -37,12 +37,12 @@ class HistoryScreen extends StatelessWidget {
                     leading: Icon(Icons.hotel, color: primary),
                     title: CustomText(
                       text: "Hotel Paradise ${index + 1}",
-                      size: CustomTextSize.lg, // thoda prominent
+                      size: CustomTextSize.md, // thoda prominent
                       fontWeight: FontWeight.w600,
                     ),
                     subtitle: CustomText(
                       text: "Cleaned 10 rooms • 20 Aug 2025",
-                      size: CustomTextSize.sm, // chhota secondary text
+                      size: CustomTextSize.xs, // chhota secondary text
                       color: CustomTextColor.textSecondary,
                     ),
                     trailing: const Icon(

@@ -47,7 +47,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
           CustomText(
             text: "Hello, Zain 👋",
             size: CustomTextSize.xxl,
-            fontFamily: "Poppins",
             fontWeight: FontWeight.w600,
             textAlign: TextAlign.center,
           ),
@@ -64,7 +63,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
               CustomText(
                 text: "Assigned Hotels",
                 size: CustomTextSize.lg,
-                fontFamily: "Poppins",
                 color: CustomTextColor.text,
               ),
               CustomButton(

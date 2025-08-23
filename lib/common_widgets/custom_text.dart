@@ -23,7 +23,6 @@ class CustomText extends StatelessWidget {
   final TextAlign? textAlign;
   final TextOverflow? overflow;
   final int? maxLines;
-  final String? fontFamily;
   final double? fontSize;
   final double? letterSpacing;
   final double? lineHeight;
@@ -38,7 +37,6 @@ class CustomText extends StatelessWidget {
     this.textAlign,
     this.overflow,
     this.maxLines,
-    this.fontFamily,
     this.fontSize,
     this.letterSpacing,
     this.lineHeight,
@@ -97,15 +95,12 @@ class CustomText extends StatelessWidget {
       height: lineHeight ?? defaults["height"],
       color: _getColor(context),
       fontWeight: fontWeight,
-      fontFamily: fontFamily ?? 'Roboto',
+      fontFamily: 'Poppins',
     );
 
     return Text(
       text,
-      style:
-          style != null
-              ? defaultStyle.merge(style) // 👈 agar style pass kare to override
-              : defaultStyle,
+      style: style != null ? defaultStyle.merge(style) : defaultStyle,
       textAlign: textAlign,
       overflow: overflow,
       maxLines: maxLines,

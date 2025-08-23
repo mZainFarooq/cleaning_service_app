@@ -11,7 +11,8 @@ class AppColors {
   static const error = Color(0xFFD32F2F); // Red for errors
 
   // ---------------- Dark Theme ----------------
-  static const darkBackground = Color(0xFF000000); // Black
+  static const darkBackground = Color(0xFF1B1B1B); // Updated to #1B1B1B
+
   static const darkPrimary = Color(0xFFFF9800); // Orange (Primary)
   static const darkSecondary = Color(0xFF3F51B5); // Indigo Accent
   static const darkSurface = Color(0xFF121212); // Dark grey for cards
